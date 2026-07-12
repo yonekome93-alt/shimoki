@@ -237,7 +237,7 @@
       const history=view==='history',simulator=view==='simulator',csv=view==='csv',forecast=view==='forecast',advanced=view==='advanced';
       liveView.classList.toggle('hidden',view!=='live');historyView.classList.toggle('hidden',!history);simulatorView.classList.toggle('hidden',!simulator);csvView.classList.toggle('hidden',!csv);forecastView.classList.toggle('hidden',!forecast);advancedView.classList.toggle('hidden',!advanced);
       navLive.classList.toggle('active',view==='live');navHistory.classList.toggle('active',history);navSimulator.classList.toggle('active',simulator);navCsv.classList.toggle('active',csv);navForecast.classList.toggle('active',forecast);navAdvanced.classList.toggle('active',advanced);
-      if(history)loadHistory();if(simulator)renderSimulation();if(forecast)renderForecast();if(advanced){initAdvancedView();if(window.brandName)brandName.value=opsSettings.brandName||'LOGI FLOW'}applyBrand();
+      if(view==='live')render();if(history)loadHistory();if(simulator)renderSimulation();if(forecast)renderForecast();if(advanced){initAdvancedView();if(window.brandName)brandName.value=opsSettings.brandName||'LOGI FLOW'}applyBrand();
     }
     let allHistoryRows=[];
     async function loadHistory(){
